@@ -1,0 +1,53 @@
+# CMake build trees and generated metadata
+/build/
+/cmake-build-*/
+/out/
+/CMakeFiles/
+/CMakeCache.txt
+/cmake_install.cmake
+/CTestTestfile.cmake
+/Testing/
+/compile_commands.json
+
+# Conan-generated files and local cache data
+/conanbuild/
+/conanbuild.*
+/conan_toolchain.cmake
+/conan_deps.cmake
+/conaninfo.txt
+/graph_info.json
+/CMakeUserPresets.json
+
+# IDE and editor settings
+/.vscode/
+/.idea/
+/*.code-workspace
+/.vs/
+/*.sln
+/*.vcxproj*
+/*.xcodeproj/
+/*.xcworkspace/
+/*.xcuserstate
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Compiler outputs, logs, and temporary files
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+*.exe
+*.pdb
+*.dSYM/
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
