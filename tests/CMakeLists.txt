@@ -34,3 +34,17 @@ endfunction()
 
 add_cli_failure_test(nmos-interlink-invalid-option invalid-option)
 add_cli_failure_test(nmos-interlink-rejects-extra-positional-argument help-extra)
+
+add_executable(nmos-interlink-boost-compatibility
+    boost_compatibility.cpp
+)
+target_compile_features(nmos-interlink-boost-compatibility PRIVATE cxx_std_17)
+target_link_libraries(nmos-interlink-boost-compatibility PRIVATE
+    Boost::json
+    OpenSSL::SSL
+)
+
+add_test(
+    NAME nmos-interlink-boost-compatibility
+    COMMAND nmos-interlink-boost-compatibility
+)

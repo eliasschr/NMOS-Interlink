@@ -2,6 +2,9 @@ cmake_minimum_required(VERSION 3.20)
 
 project(NMOSInterlink VERSION 0.0.0 LANGUAGES CXX)
 
+find_package(Boost 1.91.0 REQUIRED CONFIG)
+find_package(OpenSSL 3.5.2 REQUIRED)
+
 add_executable(nmos-interlink
     src/main.cpp
 )

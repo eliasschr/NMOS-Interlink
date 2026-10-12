@@ -1,0 +1,16 @@
+{
+    "version": "0.5",
+    "requires": [
+        "zlib/1.3.1#cac0f6daea041b0ccf42934163defb20%1765284699.337",
+        "openssl/3.5.2#0c5a5e15ae569f45dff57adcf1770cf7%1754407017.477",
+        "libiconv/1.17#9923bc6dc6f106646d6967e0039a5ada%1774021608.288",
+        "libbacktrace/cci.20210118#a7691bfccd8caaf66309df196790a5a1%1722218217.276",
+        "bzip2/1.0.8#c470882369c2d95c5c77e970c0c7e321%1762886692.465",
+        "boost/1.91.0#5a53ec91421b101535a37c248a5654fc%1788958835.047"
+    ],
+    "build_requires": [
+        "b2/5.5.3#043a75bcbb090e3f81f7ac849850d0ca%1784261134.143"
+    ],
+    "python_requires": [],
+    "config_requires": []
+}
