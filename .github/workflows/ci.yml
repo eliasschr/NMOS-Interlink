@@ -21,10 +21,9 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
       - name: Set up Conan
-        uses: conan-io/setup-conan@e5a0f7458fd48abde38af3d5b8ea23b7f4bc4a4c # v1.1.2
+        uses: conan-io/setup-conan@09566912d661de90608308897a4d513e850c04e8 # v1.2.0
         with:
           version: 2.31.2
-          profile_detect: true
 
       - name: Install dependencies
         run: conan install . --build=missing -s build_type=Debug -c tools.cmake.cmaketoolchain:generator=Ninja --lockfile=conan.lock
