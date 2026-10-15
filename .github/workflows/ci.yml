@@ -25,6 +25,12 @@ jobs:
         with:
           version: 2.31.2
 
+      - name: Set up MSVC developer environment
+        if: matrix.os == 'windows-latest'
+        uses: ilammy/msvc-dev-cmd@0b201ec74fa43914dc39ae48a89fd1d8cb592756 # v1.13.0
+        with:
+          arch: x64
+
       - name: Install dependencies
         run: conan install . --build=missing -s build_type=Debug -c tools.cmake.cmaketoolchain:generator=Ninja --lockfile=conan.lock
 
