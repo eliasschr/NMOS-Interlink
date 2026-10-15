@@ -48,3 +48,27 @@ add_test(
     NAME nmos-interlink-boost-compatibility
     COMMAND nmos-interlink-boost-compatibility
 )
+
+add_executable(nmos-interlink-network-compatibility
+    network_compatibility.cpp
+)
+target_compile_features(nmos-interlink-network-compatibility PRIVATE cxx_std_17)
+target_link_libraries(nmos-interlink-network-compatibility PRIVATE
+    Boost::headers
+)
+
+function(add_network_compatibility_test id)
+    add_test(
+        NAME ${id}
+        COMMAND nmos-interlink-network-compatibility ${id}
+    )
+    set_tests_properties(${id} PROPERTIES TIMEOUT 5)
+endfunction()
+
+add_network_compatibility_test(NET-TCP-001)
+add_network_compatibility_test(NET-TCP-002)
+add_network_compatibility_test(NET-TCP-003)
+add_network_compatibility_test(NET-TCP-004)
+add_network_compatibility_test(NET-HTTP-001)
+add_network_compatibility_test(NET-HTTP-002)
+add_network_compatibility_test(NET-HTTP-003)
