@@ -29,7 +29,12 @@ jobs:
         run: conan install . --build=missing -s build_type=Debug -c tools.cmake.cmaketoolchain:generator=Ninja --lockfile=conan.lock
 
       - name: Configure
+        if: matrix.os != 'windows-latest'
         run: cmake -S . -B build/Debug -G Ninja -DCMAKE_TOOLCHAIN_FILE=build/Debug/generators/conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Debug -DBUILD_TESTING=ON
+
+      - name: Configure (Windows)
+        if: matrix.os == 'windows-latest'
+        run: cmake -S . -B build/Debug -G Ninja "-DCMAKE_TOOLCHAIN_FILE=${{ github.workspace }}/build/Debug/generators/conan_toolchain.cmake" -DCMAKE_BUILD_TYPE=Debug -DBUILD_TESTING=ON
 
       - name: Build
         run: cmake --build build/Debug --config Debug
